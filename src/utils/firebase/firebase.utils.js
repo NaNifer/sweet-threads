@@ -7,7 +7,12 @@ import {
 } from 'firebase/auth';
 
 const firebaseConfig = {
-// ADD config for firebase
+  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
+  authDomain: 'swt-threads-db-98d4d.firebaseapp.com',
+  projectId: 'swt-threads-db-98d4d',
+  storageBucket: 'swt-threads-db-98d4d.appspot.com',
+  messagingSenderId: '626766232035',
+  appId: '1:626766232035:web:506621582dab103a4d08d6',
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
