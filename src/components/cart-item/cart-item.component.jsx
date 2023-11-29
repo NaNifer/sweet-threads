@@ -1,18 +1,20 @@
-import './cart-item.styles.scss';
+import { useContext } from 'react';
 
-const CartItem = ({ cartItem }) => {
-  const { name, imageUrl, price, quantity } = cartItem;
+import { CartContext } from '../../contexts/cart.context';
+
+import { ShoppingIcon, CartIconContainer, ItemCount } from './cart-icon.styles';
+
+const CartIcon = () => {
+  const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
+
+  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+
   return (
-    <div className='cart-item-container'>
-      <img src={imageUrl} alt={`${name}`} />
-      <div className='item-details'>
-        <span className='name'>{name}</span>
-        <span className='price'>
-          {quantity} x ${price}
-        </span>
-      </div>
-    </div>
+    <CartIconContainer onClick={toggleIsCartOpen}>
+      <ShoppingIcon className='shopping-icon' />
+      <ItemCount>{cartCount}</ItemCount>
+    </CartIconContainer>
   );
 };
 
-export default CartItem;
+export default CartIcon;
